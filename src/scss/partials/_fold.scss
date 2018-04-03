@@ -1,0 +1,185 @@
+.fold {
+  height: 100vh;
+  width: 100%;
+
+  .logo {
+    margin-bottom: 96px;
+    @media (max-width: $bp-tablet-md) {
+      margin-bottom: 64px;
+    }
+  }
+
+  .container {
+    max-width: 1387px;
+    padding: 96px 48px;
+    position: relative;
+    padding-top: 80px;
+    margin: auto;
+    @media (max-width: $bp-tablet-md) {
+      padding: 64px 32px;
+    }
+
+    .grid {
+      display: flex;
+      @media (max-width: $bp-desktop-sm) {
+        display: block !important;
+
+        .col-6 {
+          display: block !important;
+          flex-basis: 100% !important;
+
+          .skeleton-mask {
+            display: none;
+          }
+        }
+      }
+
+      .col-6 {
+        display: inline-flex;
+        flex-basis: 50%;
+
+        &.left {
+          .column-content {
+            max-width: 606px;
+            padding-right: 24px;
+            @media (max-width: $bp-tablet-md) {
+              padding-right: 0;
+            }
+
+            .input-form {
+              width: 560px;
+              overflow: hidden;
+              border-radius: 4px;
+              display: flex;
+              box-shadow: 0 6px 18px -3px rgba(4,19,36,0.27);
+
+              * {
+                outline: none;
+              }
+
+              input {
+                background: #f6f6f6;
+                border: 0;
+                padding: 24px;
+                font-size: 16px;
+                flex: 1;
+                color: rgba(116,125,135,1);
+
+                &::placeholder {
+                  color: rgba(116,125,135,0.40);
+                }
+
+                &.error {
+                  color: #FB1C1C;
+                }
+              }
+
+              button {
+                background: #1B84F6;
+                font-size: 16px;
+                border: 0;
+                font-weight: 300;
+                color: white;
+                padding: 24px;
+                transition: 200ms ease-in-out;
+
+                &:hover {
+                  background: #0063CC;
+                  box-shadow: 0 2px 8px 0 rgba(0,99,204,0.33);
+                }
+
+                &:active {
+                  background: #0063CC;
+                  box-shadow: 0 2px 8px 0 rgba(0,99,204,0.33), inset 0 0 8px 4px rgba(0,55,115,0.50);
+                }
+              }
+              @media (max-width: $bp-tablet-md) {
+                width: 100%;
+                display: block;
+
+                button,
+                input {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        h1 {
+          font-weight: 500;
+          font-size: 64px;
+          color: #7D8792;
+          margin-bottom: 24px;
+          @media (max-width: $bp-desktop-sm) {
+            font-size: 56px;
+          }
+          @media(max-width: $bp-tablet-md) {
+            font-size: 48px;
+          }
+          @media(max-width: $bp-mobile-md) {
+            font-size: 32px;
+          }
+
+          .bold {
+            font-weight: 700;
+          }
+        }
+
+        p {
+          margin-bottom: 32px;
+          font-size: 18px;
+          color: #86909B;
+          line-height: 28px;
+        }
+
+        &.right {
+          justify-content: flex-end;
+          position: relative;
+
+          .column-content {
+            .skeleton-mask {
+              line-height: 0;
+              position: relative;
+              z-index: 5;
+              background: #C6D1E0;
+              box-shadow: 0 4px 14px -4px rgba(4,19,36,0.27);
+              border-radius: 4.55px;
+            }
+
+            .circle {
+              background-image: linear-gradient(-220deg, #1c87fb, 30%, #1a7feb 100%);
+              width: 540px;
+              height: 540px;
+              border-radius: 100%;
+              position: absolute;
+              z-index: 0;
+              top: -25%;
+              right: -5%;
+              @media (max-width: $bp-desktop-sm) {
+                display: none;
+              }
+
+              &.one {
+                // top: -25%;
+                // right: -5%;
+              }
+
+              &.two {
+                // right: -8%;
+                // top: -30%;
+                opacity: 0.4;
+              }
+
+              &.three {
+                // top: -35%;
+                // right: -12%;
+                opacity: 0.2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
