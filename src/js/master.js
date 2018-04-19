@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', e => {
       .then(binary => binary.json())
       .then(json => {
         submit.innerText = 'Thanks for submitting!';
+        input.value = ''
         inputFormContainer.style.boxShadow = '0 6px 18px -3px rgba(76, 217, 100, 0.47)';
 
         setTimeout(() => {
