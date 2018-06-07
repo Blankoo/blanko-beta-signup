@@ -35,42 +35,4 @@ window.addEventListener('DOMContentLoaded', e => {
     moveCircleAround(true, horizontal, vertical, circles[1])
     moveCircleAround(false, horizontal, vertical, circles[2])
   })
-
-  // submit email
-  const inputFormContainer = document.querySelector('.input-form')
-  const input = document.querySelector('#input')
-  const submit = document.querySelector('#submit')
-  const apiUrl = 'https://api.blankoapp.com/v1/beta/signup'
-
-  submit.addEventListener('click', e => {
-    const toPost = { email: input.value }
-    const reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-
-    if(reg.test(toPost.email)) {
-      input.classList.remove('error')
-      input.classList.add('success')
-
-      fetch(apiUrl, {
-        body: JSON.stringify(toPost),
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-      })
-      .then(binary => binary.json())
-      .then(json => {
-        submit.innerText = 'Thanks for submitting!';
-        input.value = ''
-        inputFormContainer.style.boxShadow = '0 6px 18px -3px rgba(76, 217, 100, 0.47)';
-
-        setTimeout(() => {
-          inputFormContainer.style.boxShadow = '0 6px 18px -3px rgba(4,19,36,0.27)';
-        }, 1000)
-
-        console.info(json)
-      })
-      .catch(err => console.error(err))
-    } else {
-      console.error('not a valid email address');
-      input.classList.add('error')
-    }
-  })
 })

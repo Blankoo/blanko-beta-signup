@@ -52,6 +52,8 @@
               border-radius: 4px;
               display: flex;
               box-shadow: 0 6px 18px -3px rgba(4,19,36,0.27);
+              user-select: none;
+              pointer-events: none;
 
               * {
                 outline: none;
@@ -64,6 +66,7 @@
                 font-size: 16px;
                 flex: 1;
                 color: rgba(116,125,135,1);
+                opacity: 0.5 !important;
 
                 &::placeholder {
                   color: rgba(116,125,135,0.40);
@@ -75,7 +78,9 @@
               }
 
               button {
-                background: #1B84F6;
+                // background: #1B84F6;
+                opacity: 0.5 !important;
+                background: #C23636;
                 font-size: 16px;
                 border: 0;
                 font-weight: 300;
@@ -83,10 +88,10 @@
                 padding: 24px;
                 transition: 200ms ease-in-out;
 
-                &:hover {
-                  background: #0063CC;
-                  box-shadow: 0 2px 8px 0 rgba(0,99,204,0.33);
-                }
+                // &:hover {
+                //   background: #0063CC;
+                //   box-shadow: 0 2px 8px 0 rgba(0,99,204,0.33);
+                // }
 
                 &:active {
                   background: #0063CC;
